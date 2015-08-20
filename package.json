@@ -1,0 +1,13 @@
+{
+	"name": "mailgunny",
+	"version": "0.0.1",
+	"description": "A tiny module to send emails through mailgun's API.",
+	"keywords": ["email", "mailgun"],
+	"repository": "git://github.com/shanebo/mailgunny.git",
+	"author": "Shane Thacker <shane@steadymade.com>",
+	"dependencies": {
+		"superagent": "1.3.0"
+	},
+	"engine": ">= 0.4.1",
+	"main": "./mailgunny"
+}
