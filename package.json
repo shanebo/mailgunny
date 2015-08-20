@@ -1,7 +1,7 @@
 {
 	"name": "mailgunny",
 	"version": "0.0.1",
-	"description": "A tiny module to send emails through mailgun's API.",
+	"description": "A tiny node.js module to send emails through mailgun's API.",
 	"keywords": ["email", "mailgun"],
 	"repository": "git://github.com/shanebo/mailgunny.git",
 	"author": "Shane Thacker <shane@steadymade.com>",
