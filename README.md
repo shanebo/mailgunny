@@ -37,7 +37,7 @@ mail.send({
 #### Required
 
 * **domain** (String) _The domain that you have a mailgun DNS record setup to send email from_
-* **key** (Date Object) _The mailgun apikey_
+* **key** (String) _The mailgun apikey_
 
 #### Optional
 
