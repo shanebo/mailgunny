@@ -12,9 +12,9 @@ With [npm](http://npmjs.org):
 ## Example
 
 ``` js
-var Mailgunny = require('mailgunny');
+const mailgunny = require('mailgunny');
 
-var mail = new Mailgunny({
+const mail = mailgunny({
 	domain: 'example.com',
 	key: 'mailgunapikey'
 });
@@ -24,7 +24,7 @@ mail.send({
 	to: ['hector@jimenez.com', 'nacho@libre.com'],
 	subject: 'You have not been baptizzzzed!',
 	html: "<h1>I'm worried about your salvation and stuff...</h1>"
-}, function(req, res){
+}, function(err, res){
 	console.log('Email was sent.');
 });
 ```

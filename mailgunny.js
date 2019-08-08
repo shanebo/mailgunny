@@ -1,42 +1,20 @@
-var superagent = require('superagent');
+const superagent = require('superagent');
 
 
-var Mailgunny = function(settings){
-	if (settings) this.config(settings);
-	return this;
+class Mailgunny {
+  constructor(opts) {
+    this.api = `https://api:${opts.key}@api.mailgun.net/v3/${opts.domain}/messages`;
+  }
+
+  send(email, callback) {
+    superagent
+      .post(this.api)
+      .send(email)
+      .type('form')
+      .set('Accept', 'application/json')
+      .end(callback || console.log);
+  }
 }
 
 
-Mailgunny.prototype = {
-
-	config: function(settings){
-		this.api = 'https://api:' + settings.key + '@api.mailgun.net/v3/' + settings.domain + '/messages';
-		return this;
-	},
-
-	send: function(email, callback){
-		superagent
-			.post(this.api)
-			.send(email)
-			.type('form')
-			.set('Accept', 'application/json')
-			.end(callback || this.complete);
-	},
-
-	complete: function(err, res){
-		if (err) {
-			console.log(res.status);
-			console.log(err);
-		} else if (res.status != 200) {
-			console.log(res.status);
-			console.log(res.body);
-		} else {
-			console.log(res.status);
-			console.log(res.body);
-		}
-	}
-
-};
-
-
-module.exports = Mailgunny;
+module.exports = (opts) => new Mailgunny(opts);
